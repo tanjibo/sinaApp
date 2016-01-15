@@ -1,0 +1,55 @@
+/*全局reset样式*/
+body,html{
+	font:14px/1.43333, "Microsoft YaHei",Arial,verdana,Helvetica,sans-serif,"Helvetica Neue", "SimHei", "Open Sans",;
+	color:#666;
+	background:#f9f9f9;
+}
+
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,form{
+	margin:0;
+}
+ul,ol{
+	list-style:none;
+}
+
+a,img{
+	border:none;
+}
+
+a{
+	text-decoration: none;
+	outline: none !important;
+	&:hover{
+		text-decoration: none;
+		outline:none !important;
+	}
+}
+input,textarea,select,button,
+input:active,button:active,textarea:active,select:active,
+button:focus,input:focus,textarea:focus,select:focus{
+	outline:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	-o-user-select:none;
+	user-select:none;
+	border-color:none !important;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #c8cdd2;  
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #c8cdd2;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color:grey;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: grey;
+}

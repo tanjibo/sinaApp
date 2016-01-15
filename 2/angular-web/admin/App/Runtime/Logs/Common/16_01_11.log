@@ -1,0 +1,6 @@
+[ 2016-01-11T10:51:56+08:00 ] ::1 /sinaApp/2/angular-web/admin/index.php/App
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+ERR: 无法加载模块:App
+

@@ -1,0 +1,29 @@
+/*删格系统*/
+@import "function";
+
+.grad-fluid{
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:15px;
+	padding-right:15px;
+}
+.grad-lg-1,.grad-lg-2,.grad-lg-3,
+.grad-lg-4,.grad-lg-5,.grad-lg-6,
+.grad-lg-7,.grad-lg-8,.grad-lg-9,
+.grad-lg-10,.grad-lg-11,.grad-lg-12
+{
+	position: relative;
+	float:left;
+}
+
+/*生成百分比宽度*/
+/* grad-lg-num */
+.gridLoop(12,grid-lg-);
+
+/*生成栅格系统左边lg边距*/
+/* grad-left-num */
+.gridMLoop(12,right);
+
+/*生成栅格系统右边lg边距*/
+/* grad-left-num */
+.gridMLoop(12,left);

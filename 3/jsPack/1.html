@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        *{
+        	padding:0;
+        	margin:0;
+        }
+          div#div1{
+             text-align: center;
+             width:400px;
+             margin:30px auto;
+          }
+          input[type=button]{
+          	border:none;
+          	width:80px;
+          	height:40px;
+          	line-height: 40px;
+          	background:orange;
+          	color:white;
+          	font-size:14px;
+          	text-align: center;
+          	cursor:pointer;
+          }
+         input[type=button]:hover{
+         	   background:green;
+
+         }
+           div#div1 div.tab{
+
+           border:2px solid orange;
+           width:400px;
+           height:300px;
+           display:none;
+
+           }
+           div#div1 div.show{
+           	display: block;
+           }
+           input[type=button].active{
+           	background:green;
+           }
+        </style>
+     
+    </head>
+    <body>
+      <div id="div1">
+      	<input class="active" type="button" value="学习">
+      	<input type="button" value="培训">
+      	<input type="button" value="舞蹈">
+      	<div class="tab show">学习</div>
+      	<div class="tab">培训</div>
+      	<div class="tab">舞蹈</div>
+      </div>
+    </body>
+    <script type="text/javascript">
+
+     function tab(){
+         this.oParent=document.getElementById('div1');
+         this.aInput=this.oParent.getElementsByTagName('input');
+         this.aDiv=this.oParent.getElementsByTagName('div');
+     }
+     
+     tab.prototype.init=function(){
+      	 var That=this;
+      	for(var i=0;i<this.aInput.length;i++){
+      		this.aInput[i].index=i;
+          this.aInput[i].onmouseover=function(){
+            clearInterval(That.timer);
+          }
+          this.aInput[i].onmouseout=function(){
+            That.autoPlay();
+          }
+      		this.aInput[i].onclick=function(){
+
+               That.change(this);
+          }
+      	}
+      }
+
+      tab.prototype.autoPlay=function(){
+        var _this=this;
+        var iNow=0;
+
+        this.timer=setInterval(function(){
+             if(iNow==_this.aInput.length -1){
+               iNow=0; 
+             }else{
+              iNow++;
+             }
+              
+               for(var i=0;i<_this.aInput.length;i++){
+
+                    _this.aDiv[i].style.display='none';
+
+                     _this.aInput[i].className="";
+                 }
+               _this.aInput[iNow].className="active";
+
+               _this.aDiv[iNow].style.display='block';
+              
+             
+         },300);
+      }
+
+      tab.prototype.change=function(obj){
+
+            for(var i=0;i<this.aDiv.length;i++){
+                this.aDiv[i].style.display='none';
+                this.aInput[i].className="";
+            }
+            obj.className="active";
+            this.aDiv[obj.index].style.display='block';
+      }
+      tab=new tab();
+       tab.init();
+      tab.autoPlay();
+     </script>
+</html>

@@ -1,0 +1,45 @@
+@import 'reset';
+@import 'function';
+@import 'grid';
+@screen-sm-min:768px;
+@screen-md-min:992px;
+@screen-lg-min:1200px;
+
+body{
+	background:#f5f5f5;
+}
+
+/* 超小屏幕（手机，小于 768px） */
+/* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） */
+/* 小屏幕（平板，大于等于 768px） */
+div.flexBox{
+    display:-webkit-flex;
+	  display: flex;
+	  height:60px;
+	  background:#FF6600;
+	  position: absolute;
+	  left:0px;
+	  right:0px;
+	  bottom:0;
+  a{
+  	text-align: center;
+    flex:1;
+  	line-height: 60px;
+  	color:white;
+  	&:hover{
+  		background:red;
+  	}
+  }
+}
+
+
+
+
+
+@media (min-width: @screen-sm-min) {}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: @screen-md-min) {}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: @screen-lg-min) {}

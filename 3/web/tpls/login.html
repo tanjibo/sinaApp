@@ -1,0 +1,21 @@
+
+    <div class="container-fluid">
+
+       <form ng-submit="save()" name="form">
+       	 <div class="form-group">
+       	 	 <input type="text" class="form-control cols-sm-2" name='uname' ng-model="uname" required ng-minlength="6" ng-maxlength="16">
+            <span  ng-show="form.uname.$error.required" >请输入用户名</span>
+            <span  ng-show="form.uname.$valid">输入正确</span>
+            <span ng-show="form.uname.$error.minlength">太短</span>
+            <span  ng-show="form.uname.$error.maxlength">太长</span>
+       	 </div>
+       	 <div class="form-group">
+       	 	 <input type="password" class="form-control" ng-model="pwd" required name="pwd">
+       	 </div>
+       	 <div class="form-group">
+       	 	  <input type="submit" class="btn btn-success" value="登陆" ng-disabled="form.$invalid">
+       	 </div>
+       </form>
+       <!-- {{form.$valid}} -->
+
+    </div> <!-- /container -->

@@ -1,0 +1,16 @@
+.loop(@num,@i:0) when(@i<@num){
+	@c:(@i + 1)*5;
+	.ml@{c}{
+		margin-left: @c*1px;
+	}
+	.mr@{c}{
+		margin-right: @c*1px;
+	}
+	.mt@{c}{
+		margin-top: @c*1px;
+	}
+	.mb@{c}{
+		margin-bottom: @c*1px;
+	}
+  .loop(@num,@i + 1);
+}

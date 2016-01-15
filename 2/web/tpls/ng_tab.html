@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tanApp">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="../framework/jquery-2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../framework/angular-1.3.0/angular.js"></script>
+    <link rel="stylesheet" type="text/css" href="../framework/bootstrap-3.3.5-dist/css/bootstrap.css">
+    <style type="text/css">
+    div.template {
+        border: 1px solid red;
+        height: 80px;
+        width: 100px;
+    }
+    
+    div.template div {
+        display: none;
+        width: 100px;
+        height: 80px;
+    }
+    
+    div.template div:nth-of-type(1) {
+        display: block;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" ng-controller="tanCtrl">
+        <tan_tab my-data="data" my-id="div1"></tan_tab>
+    </div>
+</body>
+<script type="text/javascript">
+var app = angular.module('tanApp', []);
+app.directive('tanTab', function() {
+    return {
+        restrict: 'AE',
+        replace: true,
+        templateUrl: 'tab/tab.html',
+        //隔离作用遇
+        scope:{
+         myId:'@',
+         myData:'='
+        },
+        controller: ['$scope', function($scope) {
+            
+            $scope.active = false;
+
+            
+        }],
+        link: function(scope, element, attr, reController) {
+              
+            element.delegate('button', 'click', function(event) {
+                 
+                $(this).addClass('btn-success').siblings('button').removeClass('btn-success');
+                var num = $(this).index();
+                $(this).siblings('div.template').find('div').eq(num).show().siblings().hide();
+                
+               
+                
+
+            })
+        }
+    }
+})
+app.controller('tanCtrl', ['$scope', function($scope) {
+    // $scope.div1='div1';
+    $scope.data = [
+        {title:'tan1'}, 
+        {title: 'tan2'},
+        {title: 'tan3'}];
+
+}])
+</script>
+
+</html>

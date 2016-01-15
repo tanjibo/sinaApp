@@ -1,0 +1,69 @@
+/*生成12个删格系统函数*/
+.gridLoop(@counter,@prefix, @i: 0) when(@i<@counter) {
+    @c: @i+1;
+    .@{prefix}@{c}
+    {
+        width: (100%/12)*@c;
+    }
+    .gridLoop(@counter,@prefix,@i+1);
+}
+
+/*生成12个删格系统函数*/
+.gridMLoop(@counter,@prefix, @i: 0) when(@i<@counter) {
+    @c: @i+1;
+    .grid-@{prefix}-@{c}
+    {
+        margin-@{prefix}: (100%/12)*@c;
+    }
+    .gridMLoop(@counter,@prefix,@i+1);
+}
+ /*圆角函数*/
+.border-radius(@border-radius:5px){
+	-webkit-border-radius:@border-radius;
+	-ms-border-radius:@border-radius;
+	-moz-border-radius:@border-radius;
+	-o-border-radius:@border-radius;
+	 border-radius: @border-radius;
+}
+
+/*换行函数*/
+.wrap(){
+	text-wrap:wrap;
+	white-space: pre-wrap;
+	white-space:-moz-pre-wrap;
+	word-wrap:break-word;
+}
+
+
+/*阴影*/
+.box-shadow(@x:0,@y:0,@blur:1px,@color:#000){
+  -webkit-box-shadow:@arguments;
+  -moz-box-shadow:@arguments;
+  -ms-box-shadow:@arguments;
+  -o-box-shadow:@arguments;
+  box-shadow: @arguments;
+ }
+
+
+/*生成12个删格系统函数*/
+
+ .loop(@num,@i:0) when (@i<@num){
+  /*左外边距*/
+
+  .ml@{i}{
+     margin-left:@i;
+  }
+  /*右外边距*/
+  .mr@{i}{
+    margin-right:@i;
+  }
+  /*上外边距*/
+  .mt@{i}{
+     margin-top:@i;
+  }
+  .mb@{i}{
+    margin-bottom: @i;
+  }
+
+  .loop(@num,@i+1);
+ }
