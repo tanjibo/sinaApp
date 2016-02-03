@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+       <div id="div1">
+       	<span >32333</span>
+       </div>
+    </body>
+    <script type="text/javascript">
+       //console.log();
+       // var i=0;
+       // setInterval(function(){
+       // 	i++;
+       // 	console.log(i);
+       // },1000)
+       // 
+       // console.warn();
+       // console.error();
+       // console.trace();
+       // console.assert(a);
+       // console.profile();
+       // console.time();
+       // console.timeEnd();
+       // 
+       // 
+       // console.group('第一张');
+       // console.log(1);
+       // console.groupEnd();
+       // 
+       // 
+       // var cat={};
+       // cat.name='dd';
+       // cat.show=function(){
+       // 	return  'fdd';
+       // }
+       // console.log(cat);
+       // 显示所有的信息
+       // console.dir(cat);
+       // window.onload=function(){
+       // 	var oDiv=document.getElementById('div1');
+       // 	console.dirxml(oDiv);//显示当前元素的代码结构
+       // }
+       // function  a(){
+       // 	return b();
+       // }
+
+       // function b(){
+       // 	return c();
+       // }
+
+       // function c(){
+       // 	console.trace();  //栈
+       // 	return 1;
+       // }
+
+       // a();
+       // console.time('计时器');
+       // for(var i=0;i<100000;i++){
+
+       // }
+       // console.timeEnd('计时器')
+       // 
+       // 
+       function aa(){
+       	for(var i=0;i<10000;i++){
+            bb();
+       	}
+       	 function bb(){
+       	  var c=0;
+        }
+       }
+      
+       console.profile();
+       aa();
+       console.profileEnd();
+    </script>
+</html>

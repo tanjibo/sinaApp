@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+    <script type="text/javascript">
+
+      function people(){
+
+      }
+
+      people.prototype.say=function(){
+          alert(11);
+      }
+
+      function student(){
+
+      }
+
+      student.prototype=new people();
+ 
+      student.prototype.say=function(){
+         people.prototype.say();
+      }
+
+     var n=new student();
+      n.say();
+
+    </script>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>食刻</title>
+<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta name="keywords" content="" >
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css" href="dropload/dist/dropload.css">
+<link rel="stylesheet" type="text/css" href="css/com.css"  />
+<link rel="stylesheet" type="text/css" href="css/vip.css"  />
+
+</head>
+<body class="shike_bg">
+<div class="zhezhao"></div>
+<div class="tankuang">
+	<div class="shanchu">
+		<p class="neirong">确定要删除么？</p>
+		<p class="btn"><input class="quxiao" type="button" /><input class="queding" type="button" /></p>
+	</div>
+</div>
+
+
+	<article class="wrap">	
+		<section class="foodCarving">
+			<article class="food_l">
+				<span></span>
+			</article>
+
+			 <div class="outer">
+			 <div class="inner">
+				<!-- 	<article class="food_r">
+						<p class="time">2015-1-17<b>20:35:48</b></p>
+						<dl>
+							<a href="shike_details.html"><dt><img src="images/tp.jpg" /></dt>
+							<dd>今天，和朋友一起去了北京海淀区的渔公渔婆，他家的水煮鱼非常值得推荐，价格公道有机会再来...</dd></a>
+							<dd><p><span class="delete">删除</span><a href="shike_details.html">查看详情</a><b></b></p></dd>
+						</dl>
+					</article> -->
+				 </div>
+	    </div>
+		</section>
+	</article>
+<script type="text/javascript" src="js/jquery.1.11.3.min.js"></script>
+<!-- <script type="text/javascript" src="js/shike.js"></script> -->
+<script type="text/javascript" src="dropload/dist/dropload.js"></script>
+<script type="text/javascript">
+var num=1;
+var obj={};
+	$(function(){
+		 var dropload = $('.inner').dropload({
+      
+        loadUpFn : function(me){
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://fjs.taobaichi.com/index.php/FanApi/MealList/recordList',
+                dataType: 'json',
+                data:{ user_id:27},
+                success: function(meg){
+
+                	  if(meg.code!='10091'){
+										  var html="";
+										  $.each(meg.result.list,function(i,index) {
+										  	 console.log(index);
+										  	html += '<article class="food_r">\
+														<p class="time">'+index.create_time+'</p>\
+														<dl>\
+															<a href="shike_details.html"><dt><img src="images/tp.jpg" /></dt>\
+															<dd>'+index.remark+'</dd></a>\
+															<dd><p><span class="delete">删除</span><a href="shike_details.html">查看详情</a><b></b></p></dd>\
+														</dl>\
+													</article>';
+							                 })
+										
+									}
+                   
+                    // 为了测试，延迟1秒加载
+                    setTimeout(function(){
+                        $('.food_r').remove();
+                        $('.inner').prepend(html);
+                          num=2;
+                        // 每次数据加载完，必须重置
+                        
+                        dropload.resetload();
+                    },1000);
+                },
+                error: function(xhr, type){
+                    alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                    dropload.resetload();
+                }
+            });
+
+        },
+        loadDownFn : function(me){
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://fjs.taobaichi.com/index.php/FanApi/MealList/recordList',
+                dataType: 'json',
+                data:{ user_id:27,p:num},
+                success: function(meg){
+                	  if(meg.code!='10091'){
+										  var html="";
+										  $.each(meg.result.list,function(i,index) {
+										  	 
+										  	html += '<article class="food_r">\
+														<p class="time">'+index.create_time+'</p>\
+														<dl>\
+															<a href="shike_details.html"><dt><img src="images/tp.jpg" /></dt>\
+															<dd>'+index.remark+'</dd></a>\
+															<dd><p><span class="delete">删除</span><a href="shike_details.html">查看详情</a><b></b></p></dd>\
+														</dl>\
+													</article>';
+							                 })
+										
+									}
+                   
+                    // 为了测试，延迟1秒加载
+                    setTimeout(function(){
+                    	if(num==1){
+                    		$('.inner').prepend(html);
+                    	}else{
+                    		$(html).insertBefore('.dropload-down');
+                    	}
+                        
+                        // 每次数据加载完，必须重置
+                        dropload.resetload();
+                        num++;
+                    },1000);
+                },
+                error: function(xhr, type){
+                    alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                    dropload.resetload();
+                }
+            });
+        }
+    });
+
+
+});
+
+</script>
+</body>
+</html>

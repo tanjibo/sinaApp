@@ -1,0 +1,10 @@
+[ 2016-02-01T10:56:26+08:00 ] ::1 /sinaApp/1/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008902s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009089s ]
+NOTIC: [2] PDO::__construct():  D:\WWW\sinaApp\1\ThinkPHP\Library\Think\Db\Driver.class.php ç¬¬ 103 è¡Œ.
+ERR: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: ²»ÖªµÀÕâÑùµÄÖ÷»ú¡£ 
+

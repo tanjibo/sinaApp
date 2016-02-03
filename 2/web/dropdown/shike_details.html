@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>食刻-详情</title>
+<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<meta name="keywords" content="" >
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css" href="css/com.css"  />
+<link rel="stylesheet" type="text/css" href="css/vip.css"  />
+</head>
+<body>
+<div class="zhezhao"></div>
+<div class="tankuang">
+	<div class="shezhi">
+		<p class="close"></p>
+		<p class="whoSee"><img src="images/skyktb@3x.png" />谁可以看</p>
+		<p class="choose"><span class="myself on"><b class="icon"></b><b class="b1">仅自己</b></span><span class="others"><b class="icon"></b><b class="b1">他人</b></span></p>
+		<p class="tj"><input type="button" /></p>
+	</div>
+</div>
+
+
+
+	<article class="wrap">	
+		<section class="food_details">
+			<!--<article class="title">
+				<dl>
+					<dt><img src="images/tp.jpg" /></dt>
+					<dd>
+						<h1>疯狂的Cindy</h1>
+						<p><span><img class="set" src="images/set_btn.png" /></span>2016-1-14   星期五  18:22:34</p>
+					</dd>
+				</dl>
+			</article> -->
+			<article class="food_details_cont">
+				<aside class="pingjia">
+				 这家的酸汤鱼真是超级棒，味道美美的，量也特别的大，三个人一起都没有吃完，还有一些别的菜都特别的美味、地道，超开心。还要再次光顾... <a href="#"><img src="images/sp.png" />&nbsp;&nbsp;观看美食视频</a>
+				 </aside>
+				 <aside class="banner">
+				 	<!--轮播图  start-->
+				<div style=" position:relative;">
+					<div id="mySwipe" class="swipe" style="visibility: visible;">
+				        <div class="swipe-wrap">
+				        	<div>
+				            	<a href="#"><img src="http://www.nvshengmimi.com/s/img/7b97bc1c5c4ac30efb8577c72aa6d75d"></a>
+				           	</div>
+				        	<div>
+				            	<a href="#"><img src="http://cdn.nvshengmimi.com/s/img/7f21a8cb463020730ff7c346e0d9418b"></a>
+				           	</div>
+				           	<div>
+				            	<a href="#"><img src="http://cdn.nvshengmimi.com/s/img/cf0060b0a0dcefa1acfb2c4750af12ba"></a>
+				           	</div>
+				           	<div>
+				            	<a href="#"><img src="http://cdn.nvshengmimi.com/s/img/0d30c50b24f8b62d75ab7a0c15a98c9f"></a>
+				           	</div>
+				        </div>
+				        <p class="page"><b class="page_num">1</b>/<b class="page_all"></b></p>
+				   	</div>
+				</div>
+
+<!--轮播图  end-->
+				 </aside>
+				 <aside class="guige">
+				 	<ul>
+				 		<li><img src="images/yczt.png" />用餐主题<b>外出用餐</b></li>
+				 		<li><img src="images/ctmc.png" />餐厅名称<b>北京·俏江南</b></li>
+				 		<li><img src="images/ctwz.png" />餐厅位置<b>朝阳路高井商服2号楼底</b></li>
+				 		<li><img src="images/hccd.png" />好吃程度<b><img src="images/4@2x.png" /></b></li>
+				 		<li><img src="images/hlds.png" />一餐消费<b>￥520</b></li>
+				 	</ul>
+				 </aside>
+			</article>
+			<article class="tuijian">
+				<h2>相关推荐</h2>
+				<dl class="food_details_cont">
+					<dt><img src="images/tp.jpg" /></dt>
+					<dd>这里有最好的贵州菜教学，周末班，如有兴加我，海淀区也有报名点...</dd>
+				</dl>
+			</article>
+		</section>
+	</article>
+<script type="text/javascript" src="js/jquery.1.11.3.min.js"></script>
+ <script type="text/javascript" src="js/swipe.js"></script> <!--banner轮播 -->
+<script type="text/javascript" src="js/shike.js"></script>
+<script type="text/javascript" src="js/vip.js"></script>
+<script  type="text/javascript">
+$(function(){
+	var elem = document.getElementById('mySwipe');
+	var pageAll = $('#mySwipe .swipe-wrap div').length;
+	$('.page_all').html(pageAll);
+	window.mySwipe = Swipe(elem, {
+		startSlide: 0,
+		//auto: 3000,
+		continuous: true,
+		disableScroll: false,
+		stopPropagation: true,
+		transitionEnd: function(index) {	
+			$('.page_num').html(index+1);
+		}
+	});
+})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        span{
+        	display: inline-block;
+        	border:1px solid purple;
+        	width:80px;
+        	height:80px;
+        	text-align: center;
+        	line-height: 80px;
+        	font-size:20px;
+        	cursor:pointer;
+        }
+        </style>
+    </head>
+    <body>
+    <div id="div1">
+    	<span>1</span>
+    	<span>2</span>
+    	<span>3</span>
+    	<span>4</span>
+    </div>
+    </body>
+    <script type="text/javascript">
+
+    window.onload=function(){
+    	var oDiv=document.getElementById('div1');
+    	var aSpan=oDiv.getElementsByTagName('span');
+    	for(var i=0;i<aSpan.length;i++){
+    		// (function(i){
+    		// 		aSpan[i].onclick=function(){
+    		//         alert(i)
+    		// };
+    		// })(i)
+    		// 
+    		aSpan[i].onclick=(function(i){
+           return function(){
+           	alert(i)
+           }
+    		})(i)
+    	
+    	
+    }
+  }
+    </script>
+</html>

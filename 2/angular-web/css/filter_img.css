@@ -1,0 +1,79 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%; }
+
+/**
+ * 图片渐变
+ */
+section.title {
+  background: #2c3e50;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  padding: 20px 0px;
+  box-sizing: border-box; }
+  section.title figure {
+    text-align: center; }
+    section.title figure a {
+      background: #ff006a;
+      background: red;
+      display: inline-block;
+      border-radius: 50%;
+      width: 5rem;
+      height: 5rem; }
+      section.title figure a img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        mix-blend-mode: luminosity; }
+    section.title figure a.bg {
+      background: url(../imgs/7.jpg) 0/cover;
+      background-size: cover;
+      background-color: green;
+      background-blend-mode: luminosity;
+      -webkit-transition: .5s background-color;
+              transition: .5s background-color; }
+      section.title figure a.bg:hover {
+        background-color: transparent; }
+    section.title figure figcaption {
+      color: white;
+      font-size: 14px; }
+
+/**
+ * 三角
+ */
+div.tri {
+  width: 100vw;
+  margin-top: 10px; }
+  div.tri div {
+    width: 50%;
+    height: 50vh;
+    font-size: 20px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 50vh;
+    background: #2c3e50;
+    background: #2c3e50;
+    background: -webkit-radial-gradient(circle at top left, transparent 15px, #2c3e50 0) top left, -webkit-radial-gradient(circle at top right, transparent 15px, #2c3e50 0) top right, -webkit-radial-gradient(bottom right, circle, transparent 15px, #2c3e50 0) bottom right, -webkit-radial-gradient(circle at bottom left, transparent 15px, #2c3e50 0) bottom left;
+    background: radial-gradient(circle at top left, transparent 15px, #2c3e50 0) top left, radial-gradient(circle at top right, transparent 15px, #2c3e50 0) top right, radial-gradient(circle at bottom right, transparent 15px, #2c3e50 0) bottom right, radial-gradient(circle at bottom left, transparent 15px, #2c3e50 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat; }
+
+/*# sourceMappingURL=filter_img.css.map */

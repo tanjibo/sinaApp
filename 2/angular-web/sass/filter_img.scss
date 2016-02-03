@@ -1,0 +1,95 @@
+@charset "UTF-8";
+$color:#2c3e50;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+/**
+ * 图片渐变
+ */
+
+section.title {
+    background: $color;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    padding: 20px 0px;
+    box-sizing: border-box;
+    figure {
+        text-align: center;
+        a {
+            background: hsl(335, 100%, 50%);
+            background: red;
+            display: inline-block;
+            border-radius: 50%;
+            width: 5rem;
+            height: 5rem;
+            img {
+                width: 5rem;
+                height: 5rem;
+                border-radius: 50%;
+                mix-blend-mode: luminosity;
+            }
+        }
+        a.bg {
+            background: url(../imgs/7.jpg) 0 / cover;
+            background-size: cover;
+            background-color: green;
+            background-blend-mode: luminosity;
+            transition: .5s background-color;
+            &:hover {
+                background-color: transparent;
+            }
+        }
+        figcaption {
+            color: white;
+            font-size: 14px;
+        }
+    }
+}
+
+@mixin bgtri($bg, $tl:0, $tr:$tl, $br:$tl, $bl:$tr, $type:2) {
+    background: $bg;
+    @if($type==1) {
+        background: linear-gradient(135deg, transparent $tl, $bg 0) top left, linear-gradient(225deg, transparent $tr, $bg 0) top right, linear-gradient(-45deg, transparent $br, $bg 0) bottom right, linear-gradient(45deg, transparent $bl, $bg 0) bottom left;
+    }
+    @else {
+        background: radial-gradient(circle at top left, transparent $tl, $bg 0) top left, radial-gradient(circle at top right, transparent $tr, $bg 0) top right, radial-gradient(circle at bottom right, transparent $br, $bg 0) bottom right, radial-gradient(circle at bottom left, transparent $bl, $bg 0) bottom left;
+    }
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+
+/**
+ * 三角
+ */
+
+div.tri {
+    width: 100vw;
+    margin-top: 10px;
+    div {
+        width: 50%;
+        height: 50vh;
+        font-size: 20px;
+        margin: 0px auto;
+        text-align: center;
+        line-height: 50vh;
+        background: $color;
+        /**
+         * 有待了解
+         */
+        // clip-path:
+        //         polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px),
+        //         calc(100% - 20px) 100%,
+        //         20px 100%, 0 calc(100% - 20px), 0 20px);
+        @include bgtri($color, 15px);
+    }
+}

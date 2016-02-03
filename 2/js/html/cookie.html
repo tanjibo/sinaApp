@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>js cookie</title>
+    </head>
+    <body>
+
+    </body>
+    <script type="text/javascript">
+    // document.cookie="name=tanjibo";
+    // document.cookie="pwd=tanjibo825520";
+    // alert(document.cookie);
+    // 
+    // document.cookie="username=tanjibo;expires=14";
+ 
+   /**
+    * 设置cookie
+    */
+   function setCookie(name,value,expires){
+   	var oDate=new Date();
+   	oDate.setDate(oDate.getDate()+expires);
+   	document.cookie=name+'='+value+';expires'+'='+oDate;
+   }
+    console.log(document.cookie);
+
+
+   /**
+    * 获取cookie
+    */
+   function getCookie(name){
+     var arr=document.cookie.split(';');
+     
+     for(var i=0;i<arr.length;i++){
+      var arr2=arr[i].split('=');
+      if(arr2[0]==name)
+      	return arr2[1];
+     	
+     }
+     return '';
+   }
+
+   function removeCookie(name){
+   	setCookie(name,1,-1);
+   }
+    removeCookie('tanjibo');
+  console.log(document.cookie);
+    </script>
+</html>
